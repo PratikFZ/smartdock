@@ -320,7 +320,7 @@
     <string name="dock_background_opacity">ਬੈਕਗ੍ਰਾਊਂਡ ਧੁੰਦਲਾਪਨ</string>
     <string name="override_dock_background_opacity">ਬੈਕਗ੍ਰਾਊਂਡ ਧੁੰਦਲਾਪਨ ਓਵਰਰਾਈਡ ਕਰੋ</string>
     <string name="dock_hidden">ਡੌਕ ਲੁਕਿਆ ਹੋਇਆ</string>
-    <string name="dock_hidden_message_handle">ਸਮਾਰਟ ਡੌਕ ਨੂੰ ਲੁਕਾ ਦਿੱਤਾ ਗਿਆ ਹੈ, ਤੁਸੀਂ ਹੈਂਡਲ 'ਤੇ ਟੈਪ ਕਰਕੇ ਇਸਨੂੰ ਦੁਬਾਰਾ ਐਕਟਿਵ ਕਰ ਸਕਦੇ ਹੋ।</string>
+    <string name="dock_hidden_message_handle">ਸਮਾਰਟ ਡੌਕ ਨੂੰ ਲੁਕਾ ਦਿੱਤਾ ਗਿਆ ਹੈ, ਤੁਸੀਂ ਹੈਂਡਲ ਤੇ ਟੈਪ ਕਰਕੇ ਇਸਨੂੰ ਦੁਬਾਰਾ ਐਕਟਿਵ ਕਰ ਸਕਦੇ ਹੋ।</string>
     <string name="close">ਬੰਦ ਕਰੋ</string>
     <string name="hide_notifications">ਨੋਟੀਫੀਕੇਸਨ ਲੁਕਾਓ</string>
     <string name="hide_notification_panel">ਕੀ ਇਸ ਐਪ ਲਈ ਪੈਨਲ ਤੋਂ ਨੋਟੀਫੀਕੇਸਨਾ ਲੁਕਾਉਣੀਆਂ ਹਨ? ਤੁਸੀਂ ਸੂਚਨਾ ਪੈਨਲ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਲੁਕੀਆਂ ਹੋਈਆਂ ਨੋਟੀਫੀਕੇਸਨਾ ਨੂੰ ਕੌਂਫਿਗਰ ਕਰ ਸਕਦੇ ਹੋ</string>
@@ -335,6 +335,6 @@
     <string name="wi_fi">ਵਾਈ-ਫਾਈ</string>
     <string name="bluetooth">ਬਲੂਟੁੱਥ</string>
     <string name="missing_permission">ਗੁੰਮ ਇਜਾਜ਼ਤ</string>
-    <string name="write_settings_desc">ਬ੍ਰੇਟਨੇਜ਼ਸ ਬਦਲਣ ਲਈ ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਲਿਖਣ ਦੀ ਆਗਿਆ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਨੂੰ ਐਪ ਦੀ ਪ੍ਰਬੰਧਨ ਸਕ੍ਰੀਨ 'ਤੇ ਦਿਓ</string>
+    <string name="write_settings_desc">ਬ੍ਰੇਟਨੇਜ਼ਸ ਬਦਲਣ ਲਈ ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਲਿਖਣ ਦੀ ਆਗਿਆ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਨੂੰ ਐਪ ਦੀ ਪ੍ਰਬੰਧਨ ਸਕ੍ਰੀਨ ਤੇ ਦਿਓ</string>
 
 </resources>
