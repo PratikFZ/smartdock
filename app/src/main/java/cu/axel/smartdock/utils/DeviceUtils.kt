@@ -27,6 +27,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.preference.PreferenceManager
 import cu.axel.smartdock.services.DockService
+import cu.axel.smartdock.utils.DeviceUtils
 import rikka.shizuku.Shizuku
 import java.io.BufferedReader
 import java.io.DataOutputStream
@@ -313,7 +314,10 @@ object DeviceUtils {
     }
 
     fun hasRecentAppsPermission(context: Context): Boolean {
-        return AppUtils.isSystemApp(context, context.packageName) || checkAppOpsPermission(
+        return AppUtils.isSystemApp(
+            context,
+            context.packageName
+        ) || hasShizukuPermission() || checkAppOpsPermission(
             context,
             AppOpsManager.OPSTR_GET_USAGE_STATS
         )
@@ -335,7 +339,8 @@ object DeviceUtils {
         return mode == AppOpsManager.MODE_ALLOWED
     }
 
-    fun canWriteSettings(context: Context) = checkAppOpsPermission(context, AppOpsManager.OPSTR_WRITE_SETTINGS)
+    fun canWriteSettings(context: Context) =
+        checkAppOpsPermission(context, AppOpsManager.OPSTR_WRITE_SETTINGS)
 
     fun hasShizukuPermission() =
         Shizuku.pingBinder() && Shizuku.checkSelfPermission() == PackageManager.PERMISSION_GRANTED
