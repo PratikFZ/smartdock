@@ -178,7 +178,8 @@ object AppUtils {
     ): ArrayList<AppTask> {
         val tasksInfo =
             iActivityManager?.getRunningTasks(max) ?: activityManager.getRunningTasks(max)
-        currentApp = tasksInfo.first().baseActivity!!.packageName
+        if (!tasksInfo.isNullOrEmpty())
+            currentApp = tasksInfo.first().baseActivity!!.packageName
         val getWindowingModeMethod =
             ActivityManager.RunningTaskInfo::class.java.getMethod("getWindowingMode")
         val appTasks = ArrayList<AppTask>()
