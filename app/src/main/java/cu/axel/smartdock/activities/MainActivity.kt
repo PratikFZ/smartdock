@@ -14,16 +14,17 @@ import android.widget.Toast
 import android.widget.ViewSwitcher
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.core.net.toUri
 import androidx.preference.PreferenceManager
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import cu.axel.smartdock.R
 import cu.axel.smartdock.dialogs.DockLayoutDialog
+import cu.axel.smartdock.dialogs.DonateDialog
 import cu.axel.smartdock.dialogs.NotificationPermissionDialog
 import cu.axel.smartdock.fragments.PreferencesFragment
 import cu.axel.smartdock.services.NotificationService
-import cu.axel.smartdock.utils.AppUtils
 import cu.axel.smartdock.utils.ColorUtils
 import cu.axel.smartdock.utils.DeviceUtils
 import rikka.shizuku.Shizuku
@@ -49,6 +50,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        var launchCount = sharedPreferences.getInt("launch_count", 0)
+        if (launchCount != -1 && launchCount < 5)
+            sharedPreferences.edit { putInt("launch_count", ++launchCount) }
+        if (launchCount == 5) {
+            DonateDialog(this)
+        }
         supportFragmentManager.beginTransaction()
             .replace(R.id.settings_container, PreferencesFragment())
             .commit()
@@ -175,7 +182,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun requestShizukuPermission() {
-        if (!Shizuku.pingBinder()){
+        if (!Shizuku.pingBinder()) {
             Toast.makeText(this, R.string.shizuku_is_not_running, Toast.LENGTH_LONG).show()
             return
         }

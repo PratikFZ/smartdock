@@ -1,6 +1,7 @@
 package cu.axel.smartdock.utils
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -16,6 +17,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.core.content.edit
 import androidx.core.graphics.createBitmap
+import androidx.core.net.toUri
 import androidx.preference.PreferenceManager
 import cu.axel.smartdock.R
 import java.io.BufferedReader
@@ -29,7 +31,6 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 object Utils {
-    var notificationPanelVisible = false
     var shouldPlayChargeComplete = false
     var startupTime: Long = 0
 
@@ -234,11 +235,10 @@ object Utils {
     val currentDateString: String
         get() = SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(Date())
 
-    fun getClassInfo(obj: Class<*>): String{
-        var info = ""
-        obj.declaredMethods.forEach { method ->
-            info += "\n${method.toGenericString()}"
-        }
-        return info
+    fun openUrl(context: Context, url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, url.toUri())
+        val chooserIntent = Intent.createChooser(intent, "Open with...")
+        if (chooserIntent.resolveActivity(context.packageManager) != null)
+            context.startActivity(chooserIntent)
     }
 }

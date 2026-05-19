@@ -333,4 +333,5 @@
     <string name="bluetooth">Bluetooth</string>
     <string name="missing_permission">Missing permission</string>
     <string name="write_settings_desc">Changing brightness requires write system settings opermission. Please grant it on the app\'s management screen</string>
+    <string name="donate_message">If you find this project useful or it has helped you in any way, consider showing your appreciation and supporting its ongoing development.</string>
 </resources>
