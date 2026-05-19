@@ -5,9 +5,7 @@ import android.bluetooth.IBluetoothManager
 import android.content.AttributionSource
 import android.os.Build
 import android.os.IBinder
-import android.util.Log
 import androidx.annotation.RequiresApi
-import cu.axel.smartdock.utils.Utils
 import rikka.shizuku.Shizuku
 import rikka.shizuku.ShizukuBinderWrapper
 import rikka.shizuku.SystemServiceHelper
@@ -36,7 +34,6 @@ class BluetoothManagerWrapper {
             binder = ShizukuBinderWrapper(SystemServiceHelper.getSystemService("bluetooth_manager"))
             binder?.linkToDeath(deathRecipient, 0)
             bluetoothManager = IBluetoothManager.Stub.asInterface(binder)
-            Log.e("dock", Utils.getClassInfo(bluetoothManager!!.javaClass))
         }
     }
 

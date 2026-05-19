@@ -110,6 +110,7 @@ import cu.axel.smartdock.models.Action
 import cu.axel.smartdock.models.App
 import cu.axel.smartdock.models.AppTask
 import cu.axel.smartdock.models.DockApp
+import cu.axel.smartdock.models.WINDOWING_MODE_FREEFORM
 import cu.axel.smartdock.preferences.NAV_LONG_ACTIONS
 import cu.axel.smartdock.receivers.BatteryStatsReceiver
 import cu.axel.smartdock.receivers.SoundEventsReceiver
@@ -423,9 +424,11 @@ class DockService : AccessibilityService(), OnSharedPreferenceChangeListener, On
         } else
             actions.add(Action(R.drawable.ic_pin, getString(R.string.pin)))
 
-        if (app.tasks.isNotEmpty() && app.tasks[0].id != -1) {
-            actions.add(Action(R.drawable.ic_launch_mode, getString(R.string.resize)))
-            actions.add(Action(R.drawable.ic_snap_top, getString(R.string.snap)))
+        if (app.tasks.isNotEmpty() && app.tasks[0].id != -1 && DeviceUtils.hasShizukuPermission()) {
+            if (app.tasks[0].windowingMode == WINDOWING_MODE_FREEFORM) {
+                actions.add(Action(R.drawable.ic_launch_mode, getString(R.string.resize)))
+                actions.add(Action(R.drawable.ic_snap_top, getString(R.string.snap)))
+            }
             actions.add(Action(R.drawable.ic_close, getString(R.string.close)))
         }
         return actions

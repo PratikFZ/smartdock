@@ -18,10 +18,12 @@ import android.view.Display
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.net.toUri
 import androidx.preference.PreferenceManager
-import cu.axel.smartdock.wrappers.ActivityManagerWrapper
 import cu.axel.smartdock.models.App
 import cu.axel.smartdock.models.AppTask
 import cu.axel.smartdock.models.DockApp
+import cu.axel.smartdock.models.WINDOWING_MODE_FREEFORM
+import cu.axel.smartdock.models.WINDOWING_MODE_FULLSCREEN
+import cu.axel.smartdock.wrappers.ActivityManagerWrapper
 import java.io.File
 import kotlin.math.max
 
@@ -176,7 +178,9 @@ object AppUtils {
     ): ArrayList<AppTask> {
         val tasksInfo =
             iActivityManager?.getRunningTasks(max) ?: activityManager.getRunningTasks(max)
-        currentApp = tasksInfo[0].baseActivity!!.packageName
+        currentApp = tasksInfo.first().baseActivity!!.packageName
+        val getWindowingModeMethod =
+            ActivityManager.RunningTaskInfo::class.java.getMethod("getWindowingMode")
         val appTasks = ArrayList<AppTask>()
         for (taskInfo in tasksInfo) {
             try {
@@ -191,19 +195,18 @@ object AppUtils {
                         packageManager
                     )
                 ) continue
-                try {
-                    val isRunning = taskInfo.javaClass.getField("isRunning")
-                    val running = isRunning.getBoolean(taskInfo)
-                    if (!running) continue
-                } catch (_: Exception) {
-                }
+
+                if (!taskInfo.isRunning)
+                    continue
+
                 appTasks.add(
                     AppTask(
                         taskInfo.id,
                         packageManager.getActivityInfo(taskInfo.topActivity!!, 0)
                             .loadLabel(packageManager).toString(),
                         taskInfo.topActivity!!.packageName,
-                        packageManager.getActivityIcon(taskInfo.topActivity!!)
+                        packageManager.getActivityIcon(taskInfo.topActivity!!),
+                        getWindowingModeMethod.invoke(taskInfo) as Int
                     )
                 )
             } catch (_: PackageManager.NameNotFoundException) {
@@ -359,9 +362,10 @@ object AppUtils {
         val options: ActivityOptions = ActivityOptions.makeBasic()
 
         val windowMode: Int
-        if (mode == "fullscreen") windowMode = 1
+        if (mode == "fullscreen")
+            windowMode = WINDOWING_MODE_FULLSCREEN
         else {
-            windowMode = 5
+            windowMode = WINDOWING_MODE_FREEFORM
             options.launchBounds = makeLaunchBounds(
                 context, mode, dockHeight, display
             )
