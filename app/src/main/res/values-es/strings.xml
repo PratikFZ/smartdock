@@ -334,5 +334,7 @@
     <string name="missing_permission">Faltan permisos</string>
     <string name="write_settings_desc">Ajustar el brillo requiere cambiar los ajustes del sistema. Por favor conceda este permiso en la pantalla de ajustes de la app</string>
     <string name="donate_message">Si encuentra este proyecto útil o le ha ayudado de alguna manera, considere mostrar su aprecio y contribuir a su desarollo.</string>
+    <string name="dock_elements_portrait">Elementos del Dock(portrait)</string>
+    <string name="dock_elements_landscape">Elementos del Dock(landscape)</string>
 
 </resources>
