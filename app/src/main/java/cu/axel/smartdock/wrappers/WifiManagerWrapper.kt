@@ -48,7 +48,6 @@ class WifiManagerWrapper {
             val parceledListSliceClass =
                 Class.forName("com.android.wifi.x.com.android.modules.utils.ParceledListSlice")
             getListMethod = parceledListSliceClass.getDeclaredMethod("getList")
-
         }
     }
 

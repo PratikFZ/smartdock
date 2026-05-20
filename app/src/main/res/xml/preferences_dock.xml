@@ -1,10 +1,10 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="Dock elements">
      <PreferenceScreen
-         android:title="Dock elements(portrait)"
+         android:title="@string/dock_elements_portrait"
          android:fragment="cu.axel.smartdock.fragments.DockElementsPreferences"/>
         <PreferenceScreen
-            android:title="Dock elements(landscape)"
+            android:title="@string/dock_elements_landscape"
             android:fragment="cu.axel.smartdock.fragments.DockElementsLandscapePreferences"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/behaviour">
