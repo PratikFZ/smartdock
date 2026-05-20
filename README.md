@@ -10,7 +10,7 @@
 - Multi window support
 - Keyboard shortcuts
 - Support for both desktop and tablet layouts
-- Compatible with all Android versions since Nougat, no root required
+- Compatible with Android 10 and above, no root required
 
 ## Install
 
@@ -21,7 +21,7 @@
 You can grab the latest release from F-Droid
 
 Note: The application should be installed as a system app in order to obtain the right permissions.
-Without this functionality will be limited.
+Alternatively you can use [Shizuku](https://shizuku.rikka.app).
 
 ## Usage
 
@@ -37,8 +37,6 @@ pm grant cu.axel.smartdock android.permission.WRITE_SECURE_SETTINGS
 ### Hide navigation bar
 You might also want to hide the Android navigation bar.
 [See hiding navigation bar](HideNav.md)
-
-The app uses an accessibility service to capture keyboard input, if that service is crashed you might need to re-enable it and/or restart the system.
 
 ## Get help and ask questions 
 
