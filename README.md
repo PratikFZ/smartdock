@@ -48,7 +48,7 @@ If you find this project useful or it has helped you in any way, consider showin
 
 Bitcoin Address:
 ```
-bc1qqdxea9mx536a333zwv067uc3pww6pdxz3yat8l
+bc1qzc0jnpzk4g838t56jshvt4j5a2a5dgfx5w9k5a
 ```
 
 Thank you for your support!
