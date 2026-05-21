@@ -25,12 +25,12 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Notifications" />
+                android:text="@string/notifications" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Quick settings" />
+                android:text="@string/quick_settings" />
         </com.google.android.material.tabs.TabLayout>
 
         <ImageButton
