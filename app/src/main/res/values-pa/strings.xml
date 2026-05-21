@@ -336,8 +336,8 @@
     <string name="bluetooth">ਬਲੂਟੁੱਥ</string>
     <string name="missing_permission">ਗੁੰਮ ਇਜਾਜ਼ਤ</string>
     <string name="write_settings_desc">ਬ੍ਰੇਟਨੇਜ਼ਸ ਬਦਲਣ ਲਈ ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਲਿਖਣ ਦੀ ਆਗਿਆ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਨੂੰ ਐਪ ਦੀ ਪ੍ਰਬੰਧਨ ਸਕ੍ਰੀਨ ਤੇ ਦਿਓ</string>
-    <string name="donate_message">If you find this project useful or it has helped you in any way, consider showing your appreciation and supporting its ongoing development.</string>
-    <string name="dock_elements_portrait">Dock elements(portrait)</string>
-    <string name="dock_elements_landscape">Dock elements(landscape)</string>
+    <string name="donate_message">ਜੇਕਰ ਤੁਹਾਨੂੰ ਇਹ ਪ੍ਰੋਜੈਕਟ ਲਾਭਦਾਇਕ ਲੱਗਦਾ ਹੈ ਜਾਂ ਇਸਨੇ ਤੁਹਾਡੀ ਕਿਸੇ ਵੀ ਤਰ੍ਹਾਂ ਮਦਦ ਕੀਤੀ ਹੈ, ਤਾਂ ਆਪਣੀ ਕਦਰਦਾਨੀ ਦਿਖਾਉਣ ਅਤੇ ਇਸਦੇ ਚੱਲ ਰਹੇ ਵਿਕਾਸ ਦਾ ਸਮਰਥਨ ਕਰਨ ਬਾਰੇ ਵਿਚਾਰ ਕਰੋ</string>
+    <string name="dock_elements_portrait">ਡੌਕ ਐਲੀਮੈਂਟਸ (ਪੋਰਟਰੇਟ)</string>
+    <string name="dock_elements_landscape">ਡੌਕ ਐਲੀਮੈਂਟਸ (ਲੈਂਡਸਕੇਪ)</string>
 
 </resources>
